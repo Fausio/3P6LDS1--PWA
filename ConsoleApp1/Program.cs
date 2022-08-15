@@ -22,16 +22,12 @@ namespace ConsoleApp1
             }
         }
 
+        delegate int delegado(int i);
+
         static void Main(string[] args)
         {
-
-            List<Product> list = new List<Product>();
-            list.Add(new Product("TV", 900.00));
-            list.Add(new Product("Notebook", 1200.00));
-            list.Add(new Product("Tablet", 450.00));
-            list.Sort((p1, p2) => p1.name.ToUpper().CompareTo(p2.name.ToUpper()));
-
-            var sum = list.Aggregate(0.0, (x, y) => x + y.price);
+            delegado meuDelegate = x => x * x;
+            int valor = meuDelegate(5);
         }
 
 
