@@ -6,6 +6,10 @@ namespace ConsoleApp1
 {
     internal class Program
     {
+        //        Exercícios:
+        //              Fazer um programa que, a partir de uma lista de produtos, 
+        //            calcule a soma dos preços somente dos produtos cujo nome começa com "T".
+      
         class Product
         {
             public string name;
@@ -41,11 +45,11 @@ namespace ConsoleApp1
             {
                 //  get fist character of string 
                 string fistString = x.name.Substring(0, 1);
-                
+
                 //  sum values of T product name
                 if (fistString.Contains("t") || fistString.Contains("T"))
                 {
-                    TotalResult  +=  x.price;
+                    TotalResult += x.price;
                 }
 
             });
