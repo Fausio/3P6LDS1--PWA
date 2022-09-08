@@ -1,0 +1,75 @@
+﻿@model FlexBox.Models.IndexViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+
+<style>
+    .flex-container {
+  /* We first create a flex layout context */
+  display: flex;
+  
+  /* Then we define the flow direction 
+     and if we allow the items to wrap 
+   * Remember this is the same as:
+   * flex-direction: row;
+   * flex-wrap: wrap;
+   */
+  flex-flow: row wrap;
+  
+  /* Then we define how is distributed the remaining space */
+  justify-content: space-around;
+  
+   text-align: center;
+  list-style: none;
+}
+
+.flex-item {
+  background-size: cover;
+  
+  width: 200px;
+  height: 250px;
+   
+ 
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+}
+</style>
+
+
+
+<div class="card">
+    
+    <div class="  pt-3  ">
+        
+
+        
+            <ul class="flex-container">
+                
+             @foreach (var item in @Model.FistRow)
+            { 
+                <li class="flex-item" style="background-image: url('/imgs/@item.Description')">   </li> 
+            }
+               
+            </ul>
+
+ 
+             <ul class="flex-container">
+                
+             @foreach (var item in @Model.SecundRow)
+            { 
+                <li class="flex-item" style="background-image: url('/imgs/@item.Description')">   </li> 
+            }
+               
+            </ul>
+    </div>
+</div>
+ 
